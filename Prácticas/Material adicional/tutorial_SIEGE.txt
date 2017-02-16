@@ -1,0 +1,114 @@
+
+http://blog.remarkablelabs.com/2012/11/benchmarking-and-load-testing-with-siege
+
+
+https://www.euperia.com/website-performance-2/speed-testing-your-website-with-siege-part-one/720
+https://www.euperia.com/website-performance-2/speed-testing-your-website-with-siege-part-two/771
+
+Testing your website with Siege
+Speed testing your website: part two
+
+
+As a website owner your website performance is crucial to your business. You would expect your website to be able to cope with thousands of visits per minute but unless you’ve prepared for it by purchasing quality hosting services and tuning the servers there is a good change that your website won’t cope with a lot of traffic and in a lot of cases can lead to a loss of revenue. Tuning your web servers to handle more traffic without crashing is a science of its own and there are many ways to improve performance but before you dive in and start tweaking your Apache or MySQL configurations you need some way of measuring the website performance improvements you make. There are many tools available for speed testing your website and they all have their merits. One tool that is easy to use is Siege (Website).
+
+Siege is a command line program that helps measure the speed of your website and provides a summary of the performance which you can use to measure the changes on your web servers.
+
+Installing Siege on Ubuntu (and derivatives)
+Siege is part of the standard ubuntu packages, so you should install it in the standard way:
+
+sudo apt-get install siege
+Additionally, you can download, compile and install the latest version of Siege. Use the steps below.
+
+Installing Siege on Mac OSX
+As far as I am aware there isn’t a package version of Siege for OSX so you can either download,compile and install Siege manually or use Homebrew to install.
+
+Manually compile and install
+
+Do the following to download, compile and install Siege on your OSX.
+
+ wget http://www.joedog.org/pub/siege/siege-latest.tar.gz 
+ tar xvfz siege-latest.tar.gz
+ cd siege-2.72
+ ./configure
+ make
+ make install
+
+This will install Seige to /usr/local/bin/siege.
+
+Installation via Homebrew
+
+First, install homebrew using the instructions from https://github.com/mxcl/homebrew/wiki/installation. Once installed you can simply install Siege in one command:
+
+$ brew install siege
+Using Siege
+Now that Siege is installed we can begin speed testing your website. First thing to do is to create the siege config file in your home directory.
+
+~ $ siege.config 
+New configuration template added to /home/andrew/.siegerc
+Run siege -C to view the current settings in that file
+We’ll run our first test shortly but first a word of warning!. Siege is a powerful tool and can quite easily bring your web servers down if used incorrectly! I recommend you test this on your own websites and not those of a third party.
+
+OK, lets run our first test. We’ll test the homepage of our site by simulating 10 users with a delay of up to 10 seconds between requests.
+
+~ $ siege -c10 -d10 -r1 -v http://www.mywebsite.com/
+** SIEGE 2.72
+** Preparing 10 concurrent users for battle.
+The server is now under siege...
+HTTP/1.1 200   0.12 secs:    4123 bytes ==> /
+HTTP/1.1 200   0.11 secs:    4123 bytes ==> /
+HTTP/1.1 200   0.11 secs:    4123 bytes ==> /
+HTTP/1.1 200   0.12 secs:    4123 bytes ==> /
+HTTP/1.1 200   0.11 secs:    4123 bytes ==> /
+HTTP/1.1 200   0.13 secs:    4123 bytes ==> /
+HTTP/1.1 200   0.11 secs:    4123 bytes ==> /
+HTTP/1.1 200   0.11 secs:    4123 bytes ==> /
+HTTP/1.1 200   0.12 secs:    4123 bytes ==> /
+HTTP/1.1 200   0.11 secs:    4123 bytes ==> /
+done.
+ 
+Transactions:                 10 hits
+Availability:             100.00 %
+Elapsed time:               8.12 secs
+Data transferred:           0.04 MB
+Response time:              0.11 secs
+Transaction rate:           1.23 trans/sec
+Throughput:             0.00 MB/sec
+Concurrency:                0.14
+Successful transactions:          10
+Failed transactions:               0
+Longest transaction:            0.13
+Shortest transaction:           0.11
+Let’s break this down a little. First we entered the siege command with a number of parameters:
+
+-c10 is the number of concurrent users we want to simulate.
+-r1 is the number of repetitions, in this case, 1.
+-d10 is the delay between each user request (each siege simulated users sleeps for a random interval in seconds between 0 and 10).
+-v is to show the output of each request.
+Finally the url to test. My tests were run on a bona fide website but I have changed the domain name in my examples.
+Once you hit enter Siege will run and output it’s results. The first set of results shows each request. This shows the HTTP method, the returned HTTP result code (200 is good :)), the time taken in seconds, the number of bytes retreived and finally the URL requested. You can edit your ~/.siegerc to show the full URL if you need to.
+
+After the requests have completed Siege will show you a summary report. This report is documented in the siege man page, which I have reproduced below:
+
+Transactions The number of server hits. In the example, 25 simulated users [ -c25 ] each hit the server 10 times [ -r10 ], a total of 250 transactions. It is possible for the number of transactions to exceed the number of hits that were scheduled. Siege counts every server hit a transaction, which means redirections and authentication challenges count as two hits, not one. With this regard, siege follows the HTTP specification and it mimics browser behavior.
+
+Availability This is the percentage of socket connections successfully handled by the server. It is the result of socket failures (including timeouts) divided by the sum of all connection attempts. This number does not include 400 and 500 level server errors which are recorded in “Failed transactions” described below.
+
+Elapsed time The duration of the entire siege test. This is measured from the time the user invokes siege until the last simulated user completes its transactions. Shown above, the test took 14.67 seconds to complete.
+
+Data transferred The sum of data transferred to every siege simulated user. It includes the header information as well as content. Because it includes header information, the number reported by siege will be larger then the number reported by the server. In internet mode, which hits random URLs in a configuration file, this number is expected to vary from run to run.
+
+Response time The average time it took to respond to each simulated user’s requests.
+
+Transaction rate The average number of transactions the server was able to handle per second, in a nutshell: transactions divided by elapsed time.
+
+Throughput The average number of bytes transferred every second from the server to all the simulated users.
+
+Concurrency The average number of simultaneous connections, a number which rises as server performance decreases.
+
+Successful transactions The number of times the server responded with a return code < 400.
+
+Failed transactions The number of times the server responded with a return code >= 400 plus the sum of all failed socket transactions which includes socket timeouts.
+
+Longest transaction The greatest amount of time that any single transaction took, out of all transactions.
+
+Shortest transaction The smallest amount of time that any single transaction took, out of all transactions.
