@@ -13,7 +13,7 @@ Después de la configuración de la práctica 1 tenemos el siguiente esquema:
 |        Nombre         |      IP        |
 |:---------------------:|:--------------:|
 | Ubuntu Server SWAP 1  |  10.211.55.9   |
-| Ubuntu Server SWAP 2  |  10.255.11.10  |
+| Ubuntu Server SWAP 2  |  10.211.55.10  |
 
 Lo primero que voy a hacer (que había obviado en la anterior práctica) es seguir la recomendación y activar el usuario `root` en ambas máquinas
 
