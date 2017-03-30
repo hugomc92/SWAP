@@ -6,7 +6,7 @@
 
 ### **Hugo Maldonado Cózar**
 
-#<a></a>
+# <a></a>
 
 Después de la configuración de la práctica 1 tenemos el siguiente esquema:
 

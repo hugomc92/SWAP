@@ -6,7 +6,7 @@
 
 ### **Hugo Maldonado Cózar**
 
-#<a></a>
+# <a></a>
 
 Una vez creadas las máquinas virtuales, instalado `Ubuntu Server 16.10` y actualizadas con las últimas versiones del software inicial instalado, en ambas tenemos la siguiente configuración:
 
