@@ -43,4 +43,4 @@ Aquí se pueden ver los puertos abiertos (4º columna), el estado (6º columna) 
 ### Ejercicio 3
 #### Buscar información acerca de los tipos de ataques más comunes en servidores web (p.ej. secuestros de sesión). Detallar en qué consisten, y cómo se pueden evitar.
 
-En el [Trabajo de la asignatura](../../Trabajo/Seguridad en Servidores.pdf) que realizamos, comenté algunos de los ataques más comunes, así como vulnerabilidades, medidas de seguridad, etc.
+En el [Trabajo de la asignatura](../../Trabajo/Seguridad%20en%20Servidores.pdf) que realizamos, comenté algunos de los ataques más comunes, así como vulnerabilidades, medidas de seguridad, etc.
