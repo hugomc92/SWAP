@@ -11,6 +11,8 @@
 ### Ejercicio 1
 #### Calcular la disponibilidad del sistema si tenemos dos réplicas de cada elemento (en total 3 elementos en cada subsistema).
 
+![Ejercicio 1](./img/ej1.jpg)
+
 # <a></a>
 ### Ejercicio 2
 #### Buscar frameworks y librerías para diferentes lenguajes que permitan hacer aplicaciones altamente disponibles con relativa facilidad.
@@ -41,5 +43,39 @@
 - **Cacti**. Este es otro sistema de monitorización centrado principalmente en el uso de gráficas sobre cada una de las partes de nuestro sistema (CPU, RAM, discos...) y de la red (tanto interna si la hay como externa)
 
 # <a></a>
-### Ejercicio 4
-#### Buscar ejemplos de balanceadores software y hardware (productos comerciales). Buscar productos comerciales para servidores de aplicaciones. Buscar productos comerciales para servidores de almacenamiento.
+### Ejercicio 4
+#### Buscar ejemplos de balanceadores software y hardware (productos comerciales).
+
+**Balanceadores Software**:
+
+- Nginx
+
+- HAProxy
+
+- Pen
+
+- Pound
+
+- Apache (también puede ser usado como proxy y balanceador)
+
+- Zen Load Balancer
+
+- Amazon ELB
+
+**Balanceadores Hardware**:
+
+- F5 BIG-IP
+
+- Cisco
+
+- Citrix
+
+- Kemp Technologies
+
+- Radware
+
+- Barracuda
+
+- Coyote Point / Fortinet FortiADC
+
+- Resonate
