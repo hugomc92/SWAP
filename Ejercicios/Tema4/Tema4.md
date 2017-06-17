@@ -11,17 +11,73 @@
 ### Ejercicio 1
 #### Buscar información sobre cuánto costaría en la actualidad un mainframe. Comparar precio y potencia entre esa máquina y una granja web de unas prestaciones similares.
 
+Según este [enlace](https://www.quora.com/How-much-does-an-IBM-mainframe-cost), dicen que para obtener mayor información y precios más exactos es mejor contactar con los fabricantes, pero que un mainframe de IBM puede costar al rededor de 75.000$.
+
+Es complicado obtener información de los fabricantes de las granjas webs y mainframes, ya que no están puestos de forma pública si no que los negocian con las grandes empresas que los solicitan, por lo que la comparación es prácticamente imposible de hacer.
+
 # <a></a>
 ### Ejercicio 2
 #### Buscar información sobre precio y características de balanceadores hardware específicos. Compara las prestaciones que ofrecen unos y otros.
+
+Los balanceadores de carga hardware más famosos son:
+
+- Cisco Load Balancer
+
+- Barracuda Load Balancer
+
+Por lo general, ambos realizan un balance de carga de 4 y 7 capas, ofrecen monitorización constante, también pueden servir como balanceadores globales, seguridad a través del cifrado SSL, almacenamiento en caché HTTP, compresión de datos, direccionamiento de contenido estático, protección frente a ataques de aplicaciones y DDOS, prevención frente a pérdidas de datos, actualizaciones de seguridad automáticas...
+
+Barracuda da más información en su web sobre sus productos más específicos, así que voy a realizar la comparación con 3 modelos de sus balanceadores de carga, en concreto con **Barracuda Load Balancer ADC 842**, **Barracuda Load Balancer ADC 642** y **Barracuda Load Balancer ADC 440** que son de distintas gamas y se puede apreciar mayor diferencia.
+
+Ellos te ofrecen una comparación entre sus productos que nos da muchísima información al respecto, podemos verlo [aquí](https://www.barracuda.com/products/loadbalancer/models/compare/1?models=842,642,440)
 
 # <a></a>
 ### Ejercicio 3
 #### Buscar información sobre los métodos de balanceo que implementan los dispositivos recogidos en el ejercicio 4.2.
 
+Ninguno de estos balanceadores hardware, en su página web, especifica qué métodos exactos son los que usan para balanceo, pero sí que pueden configurarse para repartir las peticiones con bastantes algoritmos de distribución de la carga, seguro que los vistos en la asignatura y otros propios seguramente.
+
 # <a></a>
 ### Ejercicio 4
 #### Instala y configura en una máquina virtual el balanceador ZenLoadBalancer.
+
+![Zen Load Balancer 1](./img/zen1.png)
+
+![Zen Load Balancer 2](./img/zen2.png)
+
+![Zen Load Balancer 3](./img/zen3.png)
+
+![Zen Load Balancer 4](./img/zen4.png)
+
+![Zen Load Balancer 5](./img/zen5.png)
+
+![Zen Load Balancer 6](./img/zen6.png)
+
+![Zen Load Balancer 7](./img/zen7.png)
+
+![Zen Load Balancer 8](./img/zen8.png)
+
+![Zen Load Balancer 9](./img/zen9.png)
+
+![Zen Load Balancer 10](./img/zen10.png)
+
+![Zen Load Balancer 11](./img/zen11.png)
+
+![Zen Load Balancer 12](./img/zen12.png)
+
+![Zen Load Balancer 13](./img/zen13.png)
+
+![Zen Load Balancer 14](./img/zen14.png)
+
+Una vez instalado, podemos acceder al panel de administración que nos ofrece a través de la siguiente dirección: https://<zenlb_ip_address>:444
+
+![Zen Load Balancer 15](./img/zen15.png)
+
+![Zen Load Balancer 16](./img/zen16.png)
+
+Una vez dentro tenemos muchas opciones de configuración y monitorización.
+
+Como no tengo las máquinas virtuales de las prácticas ya en el equipo, no puedo configurarlo exactamente, pero es una interfaz muy intuitiva y el proceso es sencillo, habiendo muchos tutoriales del proceso.
 
 # <a></a>
 ### Ejercicio 5
