@@ -11,7 +11,7 @@
 ### Ejercicio 1
 #### Aplicar con iptables una política de denegar todo el tráfico en una de las máquinas de prácticas. Comprobar el funcionamiento.### Aplicar con iptables una política de permitir todo el tráfico en una de las máquinas de prácticas. Comprobar el funcionamiento.
 
-Hecho y explicado en la [Práctica 4](../../Prácticas/Práctica4/Práctica4.md).
+Hecho y explicado en la [Práctica 4](https://github.com/hugomc92/SWAP/tree/master/Prácticas/Práctica4).
 
 # <a></a>
 ### Ejercicio 2
